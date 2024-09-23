@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стили для текста с чёрным цветом и без фона */
+        .black-text-on-white {
+            color: black; /* Чёрный текст */
+            text-align: center; /* Центрирование текста */
+            background-color: transparent; /* Прозрачный фон (никакого фона) */
+        }
+
+        /* Основной стиль для PDF контейнера */
+        .pdf-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Полная высота окна */
+            background-color: #f4f4f4;
+        }
+
+        /* Стили для встраиваемого PDF */
+        .pdf-item {
+            width: 210mm; /* Ширина A4 */
+            height: 297mm; /* Высота A4 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
+            border: none; /* Убираем рамки iframe */
+        }
+
+        /* Стили для контейнера видео */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        /* Стили для iframe с видео */
+        .video-container iframe {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Дизайнер, ретушёр и верстальщик, Тимохин Семён</h1>
+        <p>Добро пожаловать ко мне в портфолио. Здесь представлены далеко не все работы, но общий вид отображен</p>
+    </header>
+
+    <section class="gallery">
+        <!-- Добавляем изображения -->
+        <div class="gallery-item">
+            <img src="images/r3TW9h8TUAk.jpg" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/half_cheap.jpg" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="images/025-06.jpg" alt="Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="images/002-02.jpg" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/000-01.jpg" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/001-14.jpg" alt="Photo 1">
+        </div>
+	
+	<section>
+		<div class="pdf-container">
+            		<iframe class="pdf-item" src="Семён Тимохин - Resume.pdf"></iframe>
+        	</div>
+	</section>
+    </section>
+    
+    <!-- Секция с видео -->
+    <section>
+        <!-- Текст без фона -->
+        <header class="black-text-on-white">
+            <h2>
+                На видео представлена презентация альбома, над дизайном и вёрсткой которого я работал
+            </h2>
+        </header>
+
+        <!-- Контейнер для видео с центрированием -->
+        <div class="video-container">
+            <iframe src="https://vk.com/video_ext.php?oid=406132888&id=456240442&hd=4&autoplay=1" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Верстка альбомов | <a href="https://github.com/YOUR_USERNAME">GitHub</a></p>
+    </footer>
+</body>
+</html>
