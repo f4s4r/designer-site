@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Основные стили */
+        .black-text-on-white {
+            color: black; /* Чёрный текст */
+            text-align: center; /* Центрирование текста */
+            background-color: transparent; /* Прозрачный фон (никакого фона) */
+        }
         body {
             font-family: Arial, sans-serif;
             font-size: 18px;
@@ -156,8 +161,11 @@
 </head>
 <body>
     <header>
-        <h1>Дизайнер, ретушёр и верстальщик, Тимохин Семён</h1>
-        <p>Добро пожаловать ко мне в портфолио. Здесь представлены далеко не все работы, но общий вид отображен</p>
+        <h1>Верстальщик, дизайнер и ретушёр, Тимохин Семён</h1>
+        <p>Мне 19 лет, учусь в НИУ ВШЭ в Москве.
+            Хоть я имею опыт во многих аспектах создания выпускных альбомов,
+            мой основной профиль - это их конечная сборка.
+            Ниже представлены работы, участие в которых я принимал</p>
     </header>
 
     <section class="gallery">
@@ -188,7 +196,15 @@
     </section>
 
 
-
+    <section>
+        <!-- Текст без фона -->
+        <header class="black-text-on-white">
+            <h2>
+                На видео ниже представлена презентация альбомов, в реализации которых
+                было принято мое непосредственное участие
+            </h2>
+        </header>
+    </section>
     <section class="video-container">
         <iframe src="https://vk.com/video_ext.php?oid=406132888&id=456240442&hd=4&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
     </section>
