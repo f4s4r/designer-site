@@ -7,41 +7,150 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Стили для текста с чёрным цветом и без фона */
-        .black-text-on-white {
-            color: black; /* Чёрный текст */
-            text-align: center; /* Центрирование текста */
-            background-color: transparent; /* Прозрачный фон (никакого фона) */
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            box-sizing: border-box;
         }
 
-        /* Основной стиль для PDF контейнера */
-        .pdf-container {
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Галерея: более крупные изображения */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 колонки для большого экрана */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            max-width: 600px; /* Ограничение максимальной ширины */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Полная высота окна */
+            justify-content: center; /* Центровка по горизонтали */
+            align-items: center;     /* Центровка по вертикали (если потребуется) */
+            padding: 20px;
             background-color: #f4f4f4;
         }
 
-        /* Стили для встраиваемого PDF */
-        .pdf-item {
-            width: 210mm; /* Ширина A4 */
-            height: 297mm; /* Высота A4 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
-            border: none; /* Убираем рамки iframe */
+        .resume-image {
+            width: 100%;             /* Растягивает изображение на всю доступную ширину */
+            max-width: 800px;         /* Ограничение максимальной ширины */
+            height: auto;             /* Сохранение пропорций */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавление легкой тени */
         }
 
-        /* Стили для контейнера видео */
+
+
+        /* Видео-контейнер: адаптивная ширина и пропорции */
         .video-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 20px;
+            padding: 0 20px;
         }
 
-        /* Стили для iframe с видео */
         .video-container iframe {
-            max-width: 100%;
+            width: 100%;
+            max-width: 1920px; /* Ограничение максимальной ширины */
+            height: auto;
+            aspect-ratio: 16 / 9; /* Пропорции видео 16:9 */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Адаптация для планшетов */
+        @media (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+            }
+
+            .gallery-item {
+                max-width: 100%; /* Ширина изображений растягивается до контейнера */
+            }
+
+        }
+        .pdf-container {
+            height: auto; /* Для планшетов можно убрать фиксированную высоту */
+        }
+
+        /* Адаптация для мобильных телефонов */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr; /* 1 изображение на мобильных устройствах */
+            }
+
+            .gallery-item {
+                width: 100%; /* Изображения растягиваются до ширины экрана */
+            }
+
+            .pdf-item {
+                width: 100%;
+                height: auto;
+            }
+
+            .video-container iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            .gallery-item {
+                width: 100%; /* Полная ширина для мобильных устройств */
+            }
+
+            .pdf-item {
+                width: 100%;
+                height: auto;
+            }
+
+            .video-container iframe {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -52,50 +161,40 @@
     </header>
 
     <section class="gallery">
-        <!-- Добавляем изображения -->
         <div class="gallery-item">
-            <img src="images/r3TW9h8TUAk.jpg" alt="Photo 2">
+            <img src="images/r3TW9h8TUAk.jpg" alt="Обложка">
         </div>
         <div class="gallery-item">
-            <img src="images/half_cheap.jpg" alt="Photo 3">
+            <img src="images/half_cheap.jpg" alt="Дешевый стандарт">
         </div>
         <div class="gallery-item">
-            <img src="images/025-06.jpg" alt="Photo 3">
+            <img src="images/025-06.jpg" alt="Дорогой стандарт">
         </div>
         <div class="gallery-item">
-            <img src="images/002-02.jpg" alt="Photo 1">
+            <img src="images/002-02.jpg" alt="Дорогой qr">
         </div>
         <div class="gallery-item">
-            <img src="images/000-01.jpg" alt="Photo 1">
+            <img src="images/000-01.jpg" alt="Классный руководитель">
         </div>
         <div class="gallery-item">
-            <img src="images/001-14.jpg" alt="Photo 1">
+            <img src="images/001-14.jpg" alt="Общие фото">
         </div>
-	
-	<section>
-		<div class="pdf-container">
-            		<iframe class="pdf-item" src="Семён Тимохин - Resume.pdf"></iframe>
-        	</div>
-	</section>
     </section>
-    
-    <!-- Секция с видео -->
-    <section>
-        <!-- Текст без фона -->
-        <header class="black-text-on-white">
-            <h2>
-                На видео представлена презентация альбома, над дизайном и вёрсткой которого я работал
-            </h2>
-        </header>
 
-        <!-- Контейнер для видео с центрированием -->
-        <div class="video-container">
-            <iframe src="https://vk.com/video_ext.php?oid=406132888&id=456240442&hd=4&autoplay=1" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+    <section>
+        <div class="image-container">
+            <img class="resume-image" src="images/Семён Тимохин - Resume.jpg" alt="Резюме">
         </div>
+    </section>
+
+
+
+    <section class="video-container">
+        <iframe src="https://vk.com/video_ext.php?oid=406132888&id=456240442&hd=4&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
     </section>
 
     <footer>
-        <p>© 2024 Верстка альбомов | <a href="https://github.com/YOUR_USERNAME">GitHub</a></p>
+        <p>© 2024 Верстка альбомов | <a href="https://github.com/f4s4r">GitHub</a></p>
     </footer>
 </body>
 </html>
